@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&family=Poppins:wght@100;200;300;400;600;700&display=swap');
+:root{
+    --yellow:#f9ca24;
+
+}
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-decoration: capitalize;
+    transition: all .2s linear;
+    
+}
+/*yellow color background when we select*/
+*::selection{
+    background: var(--yellow);
+    color: #333;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1.4rem;
+}
+html::-webkit-scrollbar-track{
+    background:#222;
+}
+html::-webkit-scrollbar-thumb{
+    background:var(--yellow);
+}
+body{
+    background: #111;
+    overflow-x: hidden;
+    padding-left: 35rem;
+}
+
+section{
+    min-height: 100vh;
+    padding:1rem;
+}
+
+
+.btn{
+    padding: .7rem 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.btn i{
+    padding: 0 .5rem;
+    font-size:1.8rem;
+
+}
+
+.btn:hover{
+    background: var(--yellow);
+}
+
+.heading{
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 4rem;
+    padding:1rem;
+    border-bottom: .1rem solid #fff4;
+    color:#fff
+}
+/*to change the color of about into yellow*/
+.heading span{
+    color:var(--yellow)
+}
+
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    height: 100%;
+    width: 35rem;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+
+}
+header .user img{
+    height:17rem;
+    width: 17rem;
+    border-radius:50% ;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: .7rem solid var(--yellow);
+
+}
+header .user .name{
+    font-size: 3.5rem;
+    color: #fff;
+
+}
+header .user .post{
+    font-size: 2rem;
+    color: #eee;
+
+}
+header .navbar{
+    width: 100%;
+
+}
+
+header .navbar ul{
+    list-style: none;
+    padding: 1rem 3rem;
+
+}
+header .navbar ul li a{
+    display: block;
+    padding:1rem;
+    margin:1.5rem 0;
+    background: #333;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 5rem;
+    
+}
+header .navbar ul li a:hover{
+    background: var(--yellow);
+}
+/*menu bar creation*/
+#menu{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: #333;
+    color: #ffff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding:1rem 1.5rem;
+    z-index: 1000;
+    /*to hide menu bar*/
+    display: none;
+}
+
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 0 15rem;
+}
+
+
+.dashboard  .counter{
+    flex: 1 1 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    padding-top: 5rem;
+}
+
+.dashboard  .counter .box{
+    width: 30rem;
+    height: 15rem;
+    background: #222;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 3rem;
+    margin: 2rem;
+}
+.dashboard  .counter .box span{
+    font-size: 4rem;
+    color: var(--yellow);
+
+}
+
+.dashboard  .counter .box h3{
+    font-size: 2.3rem;
+    color: #fff;
+    align-items: center;
+    
+}
+
+.registered .user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 0 15rem;
+}
+.registered{
+    margin: 10%;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.registered body {
+    background-color: #32312f;
+    font-family: sans-serif;
+
+}
+
+ .registered .table-container1{
+    padding: 0 10%;
+    margin: 40px auto 0;
+
+}
+
+ .registered .heading{
+    font-size: 40px;
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 40px;
+}
+
+.registered .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ .registered .table thead{
+    background-color: #f9ca24;
+ 
+}
+
+ .registered .table thead  tr th{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.35 px;
+    color: #141414;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid #dee2e685;
+
+} 
+.registered .table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: #3c3f44;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dee2e685;
+
+
+}
+
+ .registered.table .text_open{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.35px;
+    color: #f9ca24;
+}
+
+.registered .table tbody tr td .btn1{
+    width: 130px;
+    text-decoration: none;
+    line-height: 35px;
+    display:inline-block;
+    /*background-color: #FF1046;*/
+    font-weight: medium;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    opacity: 1;
+
+}
+
+.registered .table tbody tr td .btn1{
+    
+    background: #333;
+    color: #fff;
+    cursor: pointer; 
+}
+.registered .table tbody tr td .btn1:hover{
+    background: var(--yellow);
+}
+
+.manageexam{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 0 15rem;
+}
+
+
+.manageexam  .counter{
+    flex: 1 1 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    padding-top: 5rem;
+}
+.manageexam  .counter .box{
+    width: 30rem;
+    height: 15rem;
+    background: #222;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 3rem;
+    margin: 2rem;
+}
+.manageexam  .counter .box span{
+    font-size: 4rem;
+    color: var(--yellow);
+
+}
+.manageexam  .counter .box h3{
+    font-size: 2.3rem;
+    color: #fff;
+    align-items: center;
+    
+}
+
+
+@media(max-width:768px){
+    .registered .table thead{
+        display: none;
+
+    }
+
+    .registered .table, .registered .table tbody,.registered .table tr,.registered  .table td{
+        display: block;
+        width: 100%;
+
+    }
+
+    .registered .table tr{
+        margin-bottom: 15px;
+
+    }
+
+     .registered .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+
+    }
+    .registered .table td:before{
+        content:attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left:15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+.registered .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+.registered .box-container .box{
+    height: 20rem;
+    width: 26rem;
+    border-radius: 1rem;
+    margin: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+.registered .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+
+}
+.registered .box-container .box:hover img{
+    transform:scale(1.2)
+}
+
+
+
+
+
+
+.stuscore{
+    margin: 10%;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.stuscore body {
+    background-color: #32312f;
+    font-family: sans-serif;
+
+}
+
+ .stuscore .table-container1{
+    padding: 0 10%;
+    margin: 40px auto 0;
+
+}
+
+ .stuscore .heading{
+    font-size: 40px;
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 40px;
+}
+
+.stuscore .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ .stuscore .table thead{
+    background-color: #f9ca24;
+ 
+}
+
+ .stuscore .table thead  tr th{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.35 px;
+    color: #141414;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid #dee2e685;
+
+} 
+.stuscore .table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: #3c3f44;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dee2e685;
+
+
+}
+
+ .stuscore.table .text_open{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.35px;
+    color: #f9ca24;
+}
+
+.stuscore .table tbody tr td .btn1{
+    width: 130px;
+    text-decoration: none;
+    line-height: 35px;
+    display:inline-block;
+    /*background-color: #FF1046;*/
+    font-weight: medium;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    opacity: 1;
+
+}
+
+.stuscore .table tbody tr td .btn1{
+    
+    background: #333;
+    color: #fff;
+    cursor: pointer; 
+}
+.stuscore .table tbody tr td .btn1:hover{
+    background: var(--yellow);
+}
+
+
+@media(max-width:768px){
+    .stuscore .table thead{
+        display: none;
+
+    }
+
+    .stuscore .table, .stuscore .table tbody,.stuscore .table tr,.stuscore  .table td{
+        display: block;
+        width: 100%;
+
+    }
+
+    .stuscore .table tr{
+        margin-bottom: 15px;
+
+    }
+
+     .stuscore .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+
+    }
+    .stuscore .table td:before{
+        content:attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left:15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+
+
+
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact .row .content{
+    flex: 1 1 30rem;
+    padding:4rem;
+    padding-bottom: 0;
+
+}
+
+.contact .row form{
+    flex: 1 1 45rem;
+    padding:2rem;
+    margin: 2rem;
+    margin-bottom: 4rem;
+
+}
+
+
+
+.contact .row form .box{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: #3333;
+    color: #fff;
+    text-transform: none;
+    font-size: 1.7rem;
+    width: 100%;
+}
+.contact .row form .message{
+    height: 15rem;
+    resize: none;
+}
+
+.contact .row .content .title{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+/*contact info style*/
+.contact .row .content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 0;
+    font-weight: normal;
+}
+.contact .row .content .info h3 i{
+    padding-right: 1rem;
+    color: var(--yellow);
+}
+
+/*to caps the text written in textfields*/
+.contact .row form .box::placeholder{
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*media query is usedto create responsive webpage*/
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+        
+    }
+    .dashboard{
+        padding: 1rem 4rem;
+    }
+
+
+}
+@media(max-width:991px){
+    header{
+    left:-120%;
+        
+    }
+    /*to display menu bar*/
+   #menu{
+    display: block;
+   }
+
+
+   header.toggle{
+    left: 0%;
+   }
+   body{
+    padding:0;
+   }
+
+}
+
+
+
+@media(max-width:768px){
+    html{
+        font-size: 50%;
+    }
+   
+}@media(max-width:400px){
+    header{
+    width: 100vw;
+        
+    }
+
+    .heading{
+        margin: 0 3rem;
+    }
+    .registered .row .info{
+            
+        
+        width: 100%;
+        
+    } 
+    .dashboard .counter .box{
+        width: 100%;
+    } 
+
+    /*.manageexam .counter a .box{
+        width: 100%;
+    } 
+
+    .manageexam .counter a .box{
+        width: 100%;
+    } */
+    .registered .box-container .box{
+        width: 100%;
+    }
+    .contact .row form {
+        margin: 3rem 0;
+    }
+   
+}

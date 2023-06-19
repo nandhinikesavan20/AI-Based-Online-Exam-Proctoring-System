@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="../static/css/stulogin-reg-style.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      {% if error %}
+            <h4 class="text-danger" style="color:rgb(201, 16, 16)">{{error}}</h4>
+      {% endif %}
+      <form action="/tearegister" method="POST" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text"  name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Post</span>
+            <input type="text"  name="post" placeholder="Enter your aggregated CGPA" required>
+          </div>
+          <div class="input-box">
+            <span class="details">DOB</span>
+            <input type="date"  name="dob" placeholder="Enter birth date" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Teacher ID</span>
+            <input type="text"  name="teacherid" placeholder="Enter your college name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text"  name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text"  name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text"  name="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text"  name="conpassword" placeholder="Confirm your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Qualification</span>
+            <input type="text"  name="qualification" placeholder="Enter your qualification" required>
+          </div>
+         
+        </div>
+        <!--<div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>-->
+        <div class="form-group">
+          <span class="details">Add profile photo</span>
+          <input type="file" class="form-control" name="upload_image">
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+    <p class="render">Already have an account?  <a href="{{ url_for('tealogin') }}">   Login here</a></p>
+  </div>
+
+</body>
+</html>

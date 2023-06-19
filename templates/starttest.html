@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testwindow</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/css/testwindow.css">
+    <link rel="stylesheet" href="../static/css/livestream.css">
+    
+</head>
+<body>
+    <h1 class="heading"> <span >Examination</span>  </h1>
+    <br>
+    <div>
+        <img src="{{url_for('video')}}" width="50%"/>
+        
+    </div>
+     <h1>{{examdetail['examname']}}</h1>
+     {% set queno=namespace(value = 0) %}
+    <form action="{{url_for('prescore',nameofex =examdetail['examname'] )}} " method="POST">
+        
+        {% if allquestion %}
+        
+        {% for questions in allquestion %}
+        {% set queno.value = queno.value + 1 %}
+         <p>{{queno.value}}.{{ questions['question'] }}</p>
+         
+         <input type="radio" id="c" name ="option{{ questions['question'] }}" value="{{ questions['option1'] }}">
+         <label for="html">{{ questions['option1'] }}</label><br>
+         <input type="radio" id="java"  name ="option{{ questions['question'] }}" value="{{ questions['option2'] }}">
+         <label for="css">{{ questions['option2'] }}</label><br>
+
+         <input type="radio" id="css"  name ="option{{ questions['question'] }}" value="{{ questions['option3'] }}">
+         <label for="javascript">{{ questions['option3'] }}</label><br>
+
+         <input type="radio" id="js"  name ="option{{ questions['question'] }}" value="{{ questions['option4'] }}">
+         <label for="c">{{ questions['option4'] }}</label>
+         
+         <br> 
+         
+         {% endfor%}
+        {% endif %} 
+         <div class="button">
+            <input type="submit"  name="submit" value="Submit test">
+        </div>
+        
+</form>
+        
+
+    
+
+    
+    
+    
+    
+ 
+</body>
+</html>

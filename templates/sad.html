@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/css/testwindow.css">
+    
+</head>
+<body>
+    <h1 class="heading"> <span >Examination</span>  </h1>
+    <br>
+    
+    <h2>Exam Details:{{allque['examname']}}</h2>
+
+    <ol class="list">
+        <li>Exam:{{ testitems['examname'] }}</li>
+        <li>No of Questions:{{ testitems['noofque'] }}</li>
+        <li>Total marks: {{ testitems['totalmarks'] }}</li>
+    </ol>
+  
+    <h2>Rules:</h2>
+    <ol>
+        <li>All questions are MCQ (Multiple Choice Questions)</li>
+        <li>Only one choice is correct among the given</li>
+        <li>Every question carry different marks</li>
+    </ol>
+    <br>
+
+    <form action="#",method = "GET">
+        {% if allquestions %}
+        {% for questions in allquestions %}
+         <p>{{ questions['quenumber'] }}.{{ questions['question'] }}</p>
+         <input type="radio" id="html" name="fav_language" value="HTML">
+         <label for="html">{{ questions['option1'] }}</label><br>
+         <input type="radio" id="css" name="fav_language" value="CSS">
+         <label for="css">{{ questions['option3'] }}</label><br>
+         <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+         <label for="javascript">{{ questions['option3'] }}</label>
+         <input type="radio" id="c" name="fav_language" value="JavaScript">
+         <label for="c">{{ questions['option4'] }}</label>
+         <input type="radio" id="crt" name="fav_language" value="JavaScript">
+         <label for="crt">{{ questions['correctoption'] }}</label>
+
+         <br> 
+         {% endfor%}
+         {% endif %}
+        
+</form>
+    
+<div class="button">
+    <input type="submit" value="Start test">
+</div> 
+</body>
+</html>

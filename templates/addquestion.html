@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="../static/css/student-table.css">
+    <link rel="stylesheet" href="../static/css/addquestion.css">
+    
+    <!--<link rel="stylesheet" href="../static/css/teacher-style.css">-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <section class="exam" id="exam">
+        <h1 class="heading"> Add <span>Questions</span>  </h1>
+        <div class="table-container">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>No of Questions</th>
+                        <th>Total Marks</th>
+                        <th>Duration</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if allexamdetails %}
+                    {% for examdetails in allexamdetails %}
+                    <tr>
+                        <td data-label="Exam Name">{{ examdetails ['examname'] }}</td>
+                        <td data-label="No of Questions">{{ examdetails ['noofque'] }}</td>
+                        <td data-label="Total Marks">{{ examdetails ['totalmarks'] }}</td>
+                        <td data-label="Duration">{{ examdetails ['duration'] }}</td>
+                        
+                        
+                        <td data-label=" "><a href="{{ url_for('addqueform') }}" class="btn1">Add Questions</a></td>
+                    </tr>
+                    {% endfor%}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        
+            
+    
+
+    </section>
+
+   </body>
+</html>

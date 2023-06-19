@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/home-style.css">
+</head>
+<body>
+    <h3>AI  BASED  ONLINE  EXAM  PROCTORING  SYSTEM</h3>
+    <div class="container">
+    <div class="button">
+        <a href="{{ url_for('sturegister') }}"><input type="submit" value="Student"></a>
+      </div>
+      
+      <div class="button">
+        <a href="{{ url_for('tearegister') }}"><input type="submit" value="Teacher"></a>
+      </div>
+    </div>
+</body>
+</html>

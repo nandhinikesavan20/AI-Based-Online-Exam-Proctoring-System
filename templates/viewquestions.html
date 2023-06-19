@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="../static/css/student-table.css">
+    <link rel="stylesheet" href="../static/css/addquestion.css">
+    
+    <!--<link rel="stylesheet" href="../static/css/teacher-style.css">-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <section class="exam" id="exam">
+        <h1 class="heading">  <span>Questions</span>  </h1>
+        <div class="table-container">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Question Number</th>
+                        <th>Question</th>
+                        <th>Option 1</th>
+                        <th>Option 2</th>
+                        <th>Option 3</th>
+                        <th>Option 4</th>
+                        <th>Correct Option</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if allquestions %}
+                    {% for questions in allquestions %}
+                    <tr>
+                        <td data-label="Exam Name">{{ questions ['examname'] }}</td>
+                        <td data-label="Question Number">{{ questions ['quenumber'] }}</td>
+                        <td data-label="Question">{{ questions ['question'] }}</td>
+                        <td data-label="Option 1">{{ questions ['option1'] }}</td>
+                        <td data-label="Option 2">{{ questions ['option2'] }}</td>
+                        <td data-label="Option 3">{{ questions ['option3'] }}</td>
+                        <td data-label="Option 4">{{ questions ['option4'] }}</td>
+                        <td data-label="Correct Option">{{ questions ['correctoption'] }}</td>
+                    </tr>
+                    {% endfor%}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        
+            
+    
+
+    </section>
+
+   </body>
+</html>

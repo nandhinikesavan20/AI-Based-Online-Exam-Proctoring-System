@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testwindow</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/css/testwindow.css">
+    
+</head>
+<body>
+    <h1 class="heading"> <span >Examination</span>  </h1>
+    <br>
+    
+    <h2>Exam Details: </h2>
+    
+
+    <ol class="list">
+        <li>Exam:  {{examdetail['examname']}}</li>
+        <li>No of Questions:  {{examdetail['noofque']}}</li>
+        <li>Total marks:  {{examdetail['totalmarks']}}</li>
+        <li>Duration:  {{examdetail['duration']}}</li>
+    </ol>
+  
+    <h2>Rules:</h2>
+    <ol>
+        <li>All questions are MCQ (Multiple Choice Questions)</li>
+        <li>Only one choice is correct among the given</li>
+        <li>Every question carry different marks</li>
+    </ol>
+    <br>
+    
+    
+    
+<div class="button">
+    <a href="{{ url_for('starttest', nameofex =examdetail['examname'] ) }}"><input type="submit" value="Start test"></a>
+</div> 
+</body>
+</html>

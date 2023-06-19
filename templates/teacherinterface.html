@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/teacher-style.css">
+    
+   
+</head>
+<body>
+
+    <header>
+
+        <div class="user">
+            <img src="../static/images/{{usertea['img']}}" alt="">
+            <h3 class="name">{{ usertea['name'] }}</h3>
+            <p class="post">Teacher</p>
+
+        </div>
+
+        <!--tagname.classname-->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#registered">Registered Students</a></li>
+                <li><a href="#manageexam">Manage Exam</a></li>
+                <li><a href="#stuscore">Student's Score</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!--#idname   enter--> 
+
+    <div id="menu" class="fas fa-bars"></div>
+
+
+    <!--dashboard sections starts-->
+    <section class="dashboard" id="dashboard">
+        <div class="counter">
+                <div class="box">
+                    <h3>No of students registered</h3>
+                    <span>2</span>
+                </div>
+                <div class="box">
+                    <h3>Total no of Examinations</h3>
+                    <span>3</span>
+                </div>
+                
+
+            </div>
+
+
+        
+     </section>
+    <!--dashboard sections ends-->
+
+    <!--registered stu section starts-->
+    <section class="registered" id="registered">
+        <h1 class="heading"> Registered <span>Students</span>  </h1>
+        
+        <div class="table-container1"></div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Student name</th>
+                        <th>DOB</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Qualification</th>
+                        <th>College name</th>
+                        <th>CGPA</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if allusers %}
+                    {% for eachuser in allusers %}
+                    <tr>
+                        <td data-label="Student name ">{{ eachuser ['name'] }}</td>
+                        <td data-label="dob ">{{ eachuser ['dob'] }}</td>
+                        <td data-label="Email">{{ eachuser ['email'] }}</td>
+                        <td data-label="Contact">{{ eachuser ['phone'] }}</td>
+                        <td data-label="Qualification">{{ eachuser ['qualification'] }}</td>
+                        <td data-label="College name">{{ eachuser ['college'] }}</td>
+                        <td data-label="CGPA">{{ eachuser ['cgpa'] }}</td>
+                        
+                        
+                    </tr>
+                    {% endfor%}
+                    {% endif %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!--registered stu section ends-->
+
+    <!--manageexam section starts-->
+
+    <section class="manageexam" id="manageexam">
+        <h1 class="heading"> Manage <span> Examinations</span>  </h1>
+        <div class="counter">
+            <a href="{{ url_for('createexamform') }}">
+              <div class="box">
+                <h3>Create Exam</h3>
+                <span>2</span>
+              </div>
+            </a>
+            <a href="{{ url_for('addquestion') }}">
+              <div class="box">
+                <h3>Add Questions</h3>
+                <span>3</span>
+              </div>
+            </a>
+            <a href="{{ url_for('viewexamdetails') }}">
+            <div class="box">
+                <h3>View Exam Details</h3>
+                <span>2</span>
+            </div>
+            </a>
+            
+
+        </div>
+                   
+                 
+        
+            
+    
+
+    </section>
+
+    <!--manageexam section starts-->
+
+    <!--stuscore section starts-->
+
+    <section class="stuscore" id="stuscore">
+        <h1 class="heading">Student's <span>Score</span> </h1>
+        <div class="table-container1"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student Name</th>   
+                    <th>Subject</th>
+                    <th>Marks Scored</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {% if markscored %}
+                    {% for mark in markscored%}
+                <tr>
+                    <td data-label="Student Name ">{{ mark ['stuname'] }}</td>
+                    <td data-label="Subject ">{{ mark ['examname'] }}</td>
+                    <td data-label="Marks Scored">{{ mark ['markscored'] }}</td>
+                    
+                    
+                </tr>
+                {% endfor%}
+                {% endif %}
+                
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+    <!--stuscore section starts-->
+
+
+    <!--contact section starts-->
+    <section class="contact" id="contact">
+        <h1 class="heading"> My <span>Contact</span> </h1>
+        <div class="row">
+            <div class="content">
+                <h3 class="title">contact info</h3>
+                <div class="info">
+                    <h3><i class="fas fa-envelope"></i>nandhini@gmail.com</h3>
+                    <h3><i class="fas fa-phone"></i>9456789981</h3>
+                    <h3><i class="fas fa-phone"></i>9456789981</h3>
+                    <h3><i class="fas fa-map-marker-alt"></i>tamilnadu, india</h3>
+                </div>
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="name" class="box">
+                <input type="email" placeholder="email" class="box">
+                <input type="text" placeholder="project" class="box">
+                <textarea name="" id="" cols="30" rows="10"  class="box message" placeholder="message" >
+
+                </textarea>
+                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+         
+
+    </section>
+         
+
+
+    <!--contact section ends-->
+
+    <!--scroll-->
+
+
+
+
+
+
+
+
+    <!--jquery cdn link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--custom js file link-->
+    <script src="../static/js/ui-script.js"></script>
+    
+    
+</body>
+</html>

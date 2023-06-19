@@ -1,0 +1,14 @@
+img{
+    height:40%;
+    width:28%;
+    position: fixed;
+    top: 2px;
+    right: 2px;
+}
+@media(max-width:768px){
+    img{
+        height:30%;
+        width:40%; 
+    }
+   
+}

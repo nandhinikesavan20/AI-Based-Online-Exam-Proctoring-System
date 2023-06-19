@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="../static/css/stulogin-reg-style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Login</div>
+    {%  if error %}
+         <h4 class="text-danger" style="color:rgb(201, 16, 16)">{{error}}</h4>
+    {%  endif  %}
+    <div class="content">
+      <form action="/stulogin" method="POST">
+        <div class="user-details">
+          
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" placeholder="Enter your username" required>
+          </div>
+          
+          
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" name="password" placeholder="Enter your password" required>
+          </div>
+          
+        </div>
+       
+        <div class="button">
+          <input type="submit" value="Login">
+        </div>
+      </form>
+    </div>
+    <p class="render">Don't have an account?  <a href="{{ url_for('sturegister') }}"> Register here</a></p>
+  </div>
+
+</body>
+</html>

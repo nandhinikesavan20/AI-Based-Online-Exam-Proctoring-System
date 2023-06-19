@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/student-style.css">
+    <link rel="stylesheet" href="../static/css/student-marks.css">
+    <link rel="stylesheet" href="../static/css/student-table.css">
+    
+</head>
+<body>
+    
+    <header>
+    
+        <div class="user">
+            <img src="../static/images/{{user['img']}}" alt="">
+            
+            <h3 class="name">{{user['name']}}</h3>
+           
+            <p class="post">Student</p>
+
+        </div>
+
+        <!--tagname.classname-->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#profile">profile</a></li>
+                <li><a href="#exam">Exam</a></li>
+                <li><a href="#marks">My Marks</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!--#idname   enter--> 
+
+    <div id="menu" class="fas fa-bars"></div>
+
+
+    <!--dashboard sections starts-->
+    <section class="dashboard" id="dashboard">
+        <div class="counter">
+                <div class="box">
+                    <h3>Available Exams</h3>
+                    <span>2</span>
+                </div>
+                <div class="box">
+                    <h3>No of exams completed</h3>
+                    <span>3</span>
+                </div>
+                
+
+            </div>
+
+
+        
+     </section>
+    <!--dashboard sections ends-->
+
+    <!--profile section starts-->
+    <section class="profile" id="profile">
+        <h1 class="heading"> My <span>Profile</span>  </h1>
+        <div class="row">
+            <div class="user">
+                <img src="../static/images/{{user['img']}}" alt="">
+            </div>
+    
+            <div class="info">
+                <h3><span>Name:</span>{{user['name']}}</h3>
+                <h3><span>Username:</span>{{user['username']}}</h3>
+                <h3><span>DOB:</span>{{user['dob']}}</h3>
+                <h3><span>Email:</span>{{user['email']}}</h3>
+                <h3><span>Phone:</span>{{user['phone']}}</h3>
+                <h3><span>CGPA:</span>{{user['cgpa']}}</h3>
+                <h3><span>College Name:</span>{{user['college']}}</h3>
+                
+                
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+    <!--profile section ends-->
+
+    <!--exam section starts-->
+
+    <section class="exam" id="exam">
+        <h1 class="heading"> Available <span>Exams</span>  </h1>
+        <div class="table-container">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>No of Questions</th>
+                        <th>Total Marks</th>
+                        <th>Duration</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if allexamdetails %}
+                    {% for examdetail in allexamdetails %}
+                    <tr>
+                        <td data-label="Exam Name">{{ examdetail ['examname'] }}</td>
+                        <td data-label="No of Questions">{{ examdetail ['noofque'] }}</td>
+                        <td data-label="Total Marks">{{ examdetail ['totalmarks'] }}</td>
+                        <td data-label="Duration">{{ examdetail ['duration'] }}</td>
+                        
+                        <td data-label=" "><a href="{{ url_for('testwindow', examname =examdetail['examname'] ) }}" class="btn1">Attend Exam</a></td>
+                    </tr>
+                    {% endfor%}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        
+            
+    
+
+    </section>
+
+    <!--exam section starts-->
+
+    <!--marks section starts-->
+
+    <section class="marks" id="marks">
+        <h1 class="heading"> My <span>Marks</span> </h1>
+        <div class="table-container1"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Exam</th>
+                    <th>Marks Scored</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {% if markscored %}
+                    {% for mark in markscored%}
+                <tr>
+                    <td data-label="Exam ">{{ mark ['examname'] }}</td>
+                    <td data-label="Marks Scored">{{ mark ['markscored'] }}</td>
+                    
+                    
+                </tr>
+                {% endfor%}
+                {% endif %}
+
+               
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+    <!--marks section starts-->
+
+
+    <!--contact section starts-->
+    <section class="contact" id="contact">
+        <h1 class="heading"> My <span>Contact</span> </h1>
+        <div class="row">
+            <div class="content">
+                <h3 class="title">contact info</h3>
+                <div class="info">
+                    <h3><i class="fas fa-envelope"></i>nandhini@gmail.com</h3>
+                    <h3><i class="fas fa-phone"></i>9456789981</h3>
+                    <h3><i class="fas fa-phone"></i>9456789981</h3>
+                    <h3><i class="fas fa-map-marker-alt"></i>tamilnadu, india</h3>
+                </div>
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="name" class="box">
+                <input type="email" placeholder="email" class="box">
+                <input type="text" placeholder="project" class="box">
+                <textarea name="" id="" cols="30" rows="10"  class="box message" placeholder="message" >
+
+                </textarea>
+                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+         
+
+    </section>
+         
+
+
+    <!--contact section ends-->
+
+    <!--scroll-->
+
+
+
+
+
+
+
+
+    <!--jquery cdn link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--custom js file link-->
+    <script src="../static/js/ui-script.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="../static/css/createexam.css">
+    <!--<link rel="stylesheet" href="../static/css/teacher-style.css">-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    
+
+ <div class="container">
+    <div class="title">Create Exam</div>
+    <div class="content">
+      {% if error %}
+            <h4 class="text-danger" style="color:rgb(201, 16, 16)">{{error}}</h4>
+      {% endif %}
+      <form action="/createexamform" method="POST">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Exam Name</span>
+            <input type="text"  name="examname" placeholder="Enter the name of exam" required>
+          </div>
+          <div class="input-box">
+            <span class="details">No Of Questions</span>
+            <input type="text"  name="noofque" placeholder="Enter the no of questions" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Total Marks</span>
+            <input type="text"  name="totalmarks" placeholder="Enter total marks" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Duration</span>
+            <input type="text"  name="duration" placeholder="Enter duration of exam" required>
+          </div>
+          
+          
+        </div>
+        
+        
+        <div class="button">
+          <input type="submit" value="create exam">
+        </div>
+      </form>
+
+    <!--scroll-->
+
+
+    
+
+</body>
+</html>
